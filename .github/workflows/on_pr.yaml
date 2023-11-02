@@ -1,0 +1,24 @@
+name: Check on PR
+on:
+  pull_request:
+    branches:
+      - main
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+      - run: npm i
+      - name: Lint scripts
+        run: npm run lint-scripts
+      - name: Lint styles
+        run: npm run lint-styles
+      - name: Check prettiness
+        run: npx prettier --check .
+      - name: Test
+        run: npm run test
+      - name: Build
+        run: npm run build
