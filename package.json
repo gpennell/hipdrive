@@ -16,7 +16,8 @@
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx}": "npm run lint-scripts",
-    "*.css": "npm run lint-styles"
+    "*.css": "npm run lint-styles",
+    "*": "npm run prettier"
   },
   "dependencies": {
     "react": "^18.2.0",
