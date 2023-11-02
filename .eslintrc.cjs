@@ -15,6 +15,6 @@ module.exports = {
       "warn",
       { allowConstantExport: true },
     ],
-    "no-console": "error"
+    "no-console": "error",
   },
 };
